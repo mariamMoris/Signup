@@ -1,8 +1,8 @@
 function signupPage() {
-    window.location = './signup.html'
+    window.location.href = './signup.html'
 }
 function loginPage() {
-    window.location = './index.html'
+    window.location.href = './index.html'
 }
 
 var userName = document.querySelector("#signupName");
