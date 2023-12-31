@@ -24,7 +24,9 @@ h1 {
     background-color: #17A2B5;
     color: white;
 }
-
+a{
+    text-decoration: none;
+}
 span {
     transition: .2s;
     cursor: pointer;
