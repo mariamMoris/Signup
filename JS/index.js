@@ -1,8 +1,8 @@
 function signupPage() {
-    window.location.href = './signup.html'
+    window.location.href = '.signup.html'
 }
 function loginPage() {
-    window.location.href = './index.html'
+    window.location.href = '.index.html'
 }
 
 var userName = document.querySelector("#signupName");
@@ -119,9 +119,9 @@ function load() {
 }
 function logout() {
     localStorage.removeItem("name")
-    window.location = "./index.html"
+    window.location = ".index.html"
 }
-var news = [];
+ /* var news = [];
 var httpReq = new XMLHttpRequest;
 httpReq.open("get","https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=e96c9f21a99c43d695c098df26d11f3e");
 httpReq.send()
@@ -129,8 +129,8 @@ httpReq.addEventListener("readystatechange",function(){
     if(httpReq.readyState == 4 && httpReq.status == 200){
         news = JSON.parse(httpReq.response)
         console.log(news)
-       /*  var cols="";
-        for(var i = 0; i<news.length; i++)
+        var cols="";
+        for(var i = 0; i<news.length; i++){
         cols+=` <div class="col-12">
         <div class=" my-3">
             <h3 class="text-warning">${news[i].title}</h3>
@@ -140,5 +140,6 @@ httpReq.addEventListener("readystatechange",function(){
     `
 
     }
-    document.querySelector(".row").innerHTML = cols; */
-}})
+    document.querySelector(".row").innerHTML = cols; 
+
+}})*/
