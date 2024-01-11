@@ -121,25 +121,21 @@ function logout() {
     localStorage.removeItem("name")
     window.location = ".index.html"
 }
- /* var news = [];
-var httpReq = new XMLHttpRequest;
-httpReq.open("get","https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=e96c9f21a99c43d695c098df26d11f3e");
-httpReq.send()
-httpReq.addEventListener("readystatechange",function(){
-    if(httpReq.readyState == 4 && httpReq.status == 200){
-        news = JSON.parse(httpReq.response)
-        console.log(news)
-        var cols="";
-        for(var i = 0; i<news.length; i++){
-        cols+=` <div class="col-12">
-        <div class=" my-3">
-            <h3 class="text-warning">${news[i].title}</h3>
-            <p class="ms-3">${news[i].body}</p>
+async function getMovies(){
+    var response = await fetch("https://api.themoviedb.org/3/movie/popular?&api_key=d9982e081012628595eddb21900bb7ca")
+    response = await response.json()
+    console.log(response.results);
+    var movies = response.results
+    var cols = "";
+    for(var i = 0; i<movies.length; i++){
+        cols +=`<div class="col-md-4 p-2">
+        <div class="movies">
+            <img src="https://image.tmdb.org/t/p/w500${movies[i].poster_path}" alt="" class = "w-100">
+            <h2>${movies[i].title}</h2>
+            <p>${movies[i].overview}</p>
         </div>
-    </div>
-    `
-
+    </div>   `
     }
-    document.querySelector(".row").innerHTML = cols; 
-
-}})*/
+    document.querySelector(".row").innerHTML=cols
+}
+getMovies()
