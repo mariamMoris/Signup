@@ -1,8 +1,8 @@
 function signupPage() {
-    window.location.href = '.signup.html'
+    window.location.href = './signup.html'
 }
 function loginPage() {
-    window.location.href = '.index.html'
+    window.location.href = './index.html'
 }
 
 var userName = document.querySelector("#signupName");
@@ -37,6 +37,7 @@ function createAccount() {
         };
         users.push(newUser)
         localStorage.setItem("users", JSON.stringify(users))
+        document.querySelector(".massage").classList.add('d-none')
         document.querySelector(".sucessMassega").classList.remove('d-none');
 
         console.log("Hello");
@@ -94,6 +95,7 @@ function loginUser() {
         document.querySelector(".massage").classList.remove('d-none')
     }
     else if (users.length == 0) {
+        document.querySelector(".massage").classList.add('d-none')
         document.querySelector(".alertMassage").classList.remove('d-none')
     }
     else {
@@ -105,6 +107,7 @@ function loginUser() {
                 load()
             }
             else {
+                document.querySelector(".massage").classList.add('d-none')
                 document.querySelector(".validateMassage").classList.remove('d-none');
             }
         }
@@ -119,7 +122,7 @@ function load() {
 }
 function logout() {
     localStorage.removeItem("name")
-    window.location = ".index.html"
+    window.location.href = "./index.html"
 }
 async function getMovies(){
     var response = await fetch("https://api.themoviedb.org/3/movie/popular?&api_key=d9982e081012628595eddb21900bb7ca")
